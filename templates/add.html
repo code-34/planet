@@ -1,0 +1,82 @@
+{% extends "parent.html" %}
+{% block title %}Welcome{% endblock %}
+{% block head %}
+<link type="text/css"  rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+{% endblock %}
+{% block content %}
+<script>
+  function fnSubmit(){
+    document.getElementById("SuccessMsg").style.display = "block";
+    return false;
+  }
+</script>
+<div style="text-align:center">
+  <h1>Add Record</h1>
+</div>
+<div class="container justify-content-center shadow" >
+  
+  <form action="/add_text" method="post" class="row g-2 justify-content-center">
+    <!--Text Field-->
+      <div class="col-md-5">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Customer Name...">
+      </div>
+
+      <div class="col-md-5">
+        <label for="mobile">Mobile Number</label>
+        <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter Customer Mobile Number...">
+      </div>
+
+      <div class="col-md-5">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address...">
+      </div>
+
+      <div class="col-md-5">
+        <label for="item">Product Name</label>
+        <input type="text" class="form-control" id="item" name="item" placeholder="Enter Product Name...">
+      </div>
+
+      <div class="col-md-5">
+        <label for="serial">Product Serial Number</label>
+        <input type="text" class="form-control" id="serial" name="serial" placeholder="Enter Product Serial Number...">
+      </div>
+
+      <div class="col-md-5">
+        <label for="detail">Product Details</label>
+        <input type="text" class="form-control" id="detail" name="detail" placeholder="Enter Customer Mobile Number...">
+      </div>
+
+    <!--Radio Button  -->
+
+      <div class="form-check form-check-inline" style="margin-left: 25%;">
+        <input class="form-check-input" type="radio" id="service" name="service" value="Sales">
+        <label class="form-check-label" for="service">Sales</label>
+      </div>
+      <div class="form-check form-check-inline" style="margin-left: 25%;">
+        <input class="form-check-input" type="radio" id="service" name="service" value="Service">
+        <label class="form-check-label" for="service">Service</label>
+      </div>
+      <br>
+
+      <div class="col-md-5">
+        <label for="date">Date</label>
+        <input type="date" class="form-control" id="date" name="date" placeholder="Enter Date...">
+      </div>
+
+      <div class="col-md-5">
+        <label for="amount">Amount</label>
+        <input type="text" class="form-control" id="amount" name="amount" placeholder="Enter Price...">
+      </div>
+      <br>
+      <label id="SuccessMsg" style="color:green; display:none"><strong>Form Submitted Successfully!</strong></label>
+      <br>
+      <br>
+      <div class="col-md-5">
+        <input type="submit" value="Submit" class="btn btn-outline-success mr-5" style="margin-right: 20px; width: 200px;">
+        <input type="reset" value="Reset" class="btn btn-outline-danger" style="margin-right: 20px; width: 200px;">
+      </div>
+    
+</form>
+</div>
+{% endblock %}

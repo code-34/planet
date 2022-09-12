@@ -1,0 +1,50 @@
+{% extends "parent.html" %}
+{% block title %}Result{% endblock %}
+{% block head %}
+	<link type="text/css"  rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+{% endblock %}
+{% block content %}
+
+	
+		<h3 style="text-align: center; padding-top: 10px;">Search Result</h3>
+
+        <table>
+            <tr>
+                <th><h5>Total Business</h5></th>
+                <td><h5>{{sum}}</h5></td>
+            </tr>
+        </table>
+	
+<div style="padding-bottom: 100px;">
+    <table class="table wshadow table-hover"> 
+        <tr> 
+            <th scope="col">Id</th> 
+            <th scope="col">Name</th> 
+            <th scope="col">Mobile</th> 
+            <th scope="col">Address</th> 
+            <th scope="col">Product</th> 
+            <th scope="col">Serial No.</th> 
+            <th scope="col">Details</th> 
+            <th scope="col">Service</th> 
+            <th scope="col">Date</th> 
+            <th scope="col">Amount</th> 
+        </tr> 
+            {% for row in data %}  
+                <tr scope="row"> 
+                    <td>{{row[0]}}</td> 
+                    <td>{{row[1]}}</td> 
+                    <td>{{row[2]}}</td> 
+                    <td>{{row[3]}}</td> 
+                    <td>{{row[4]}}</td> 
+                    <td>{{row[5]}}</td> 
+                    <td>{{row[6]}}</td> 
+                    <td>{{row[7]}}</td> 
+                    <td>{{row[8]}}</td> 
+                    <td>{{row[9]}}</td> 
+                </tr> 
+            {% endfor %} 
+    </table>
+</div>
+    
+	
+{% endblock %}

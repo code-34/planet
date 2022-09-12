@@ -1,0 +1,40 @@
+{% extends "parent.html" %}
+{% block title %}Contact Us{% endblock %}
+{% block head %}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}" />
+{% endblock %}
+{% block content %}
+
+<div class="container justify-content-center shadow" style="margin-top: 3%; padding-bottom: 30px;" >
+<div style="text-align:center">
+	<h3 style="text-align: center; padding-top: 20px; padding-bottom: 20px;">Search Customer Details</h3>
+</div>
+<!--Search Using Mobile Number-->
+<form action="/search_mobile" method="post" class="row g-2 justify-content-center">
+	<div class="form-group col-md-5">
+	  <label for="mobile"><b>Mobile Number</b></label>
+	  <input type="text" class="form-control" id="mobile" name="mobile"  placeholder="Enter Mobile Number">
+	</div>
+	<div class="row">
+		<div class="col-md-12 bs-linebreak">
+		</div>
+	  </div>
+	<button type="submit" class="btn btn-primary" value="Search" style="width: 200px;" >Search</button>
+  </form>
+
+  <div style="text-align: center; padding-top: 3%; padding-bottom: 3%"><h5>Or</h5></div>
+
+<!--Search Using Serial Number Number-->
+  <form action="/search_serial" method="post" class="row g-2 justify-content-center">
+	<div class="form-group col-md-5">
+	  <label for="serial"><b>Product Serial Number</b></label>
+	  <input type="text" class="form-control" id="serial" name="serial"  placeholder="Enter Serial Number">
+	</div>
+	<div class="row">
+		<div class="col-md-12 bs-linebreak">
+		</div>
+	  </div>
+	<button type="submit" class="btn btn-primary" value="Search" style="width: 200px;" >Search</button>
+  </form>
+</div>
+{% endblock %}

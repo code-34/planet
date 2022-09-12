@@ -1,0 +1,40 @@
+{% extends "parent.html" %}
+{% block title %}Contact Us{% endblock %}
+{% block head %}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}" />
+{% endblock %}
+{% block content %}
+
+<div class="container justify-content-center shadow" style="margin-top: 8%; padding-bottom: 30px;" >
+<div style="text-align:center">
+	<h3 style="text-align: center; padding-top: 20px; padding-bottom: 20px;">Search Customer Details</h3>
+</div>
+<!--Search Using Mobile Number-->
+<form action="/search_date" method="post" class="row g-2 justify-content-center">
+	<div class="form-group col-md-5">
+	  <label for="mobile"><b>Mobile Number</b></label>
+	  <input type="text" class="form-control" id="mobile" name="mobile"  placeholder="Enter Mobile Number">
+	</div>
+    <div class="col-md-12 bs-linebreak">
+    </div>
+    <!--Date Field-->
+    <div class="form-group col-md-3">
+        <label for="sdate"><b>From Date</b></label>
+        <input type="date" class="form-control" id="sdate" name="sdate">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="edate"><b>To Date</b></label>
+        <input type="date" class="form-control" id="edate" name="edate">
+      </div>
+	<div class="row">
+		<div class="col-md-12 bs-linebreak" style="padding-bottom: 10px;">
+		</div>
+	  </div>
+	<button type="submit" class="btn btn-primary" value="Search" style="width: 200px;" >Search</button>
+  </form>
+
+
+
+
+{% endblock %}

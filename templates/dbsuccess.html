@@ -1,0 +1,27 @@
+{% extends "parent.html" %}
+{% block title %}Result{% endblock %}
+{% block head %}
+	<link type="text/css"  rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+<style>
+    .div-center{
+        background-color: black;
+        color: white;
+        width: 60%;
+        margin-left:20%;
+        margin-right: 20%;
+        text-align: center;
+        padding: 5px;
+        font-size: 32pt;
+        margin-top: 30vh;
+        box-shadow: 0px 0px 10px black;
+        border-radius: 25px;
+    }
+</style>
+    {% endblock %}
+{% block content %}
+
+	
+		<div class="div-center"><h2>Database Successfully Initialized</h2></div>
+    
+	
+{% endblock %}
